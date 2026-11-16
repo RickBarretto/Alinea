@@ -1,2 +1,2 @@
-# Al-nea
+# Alínea
 Academic Editor focused on content
