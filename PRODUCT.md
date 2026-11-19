@@ -46,7 +46,7 @@ Alínea combines approachable semantic editing with a reproducible academic publ
 - **Review:** inspect comments, writing suggestions, unresolved references, and template diagnostics in the manuscript context.
 - **Export:** inspect the template, build status, actual page count, validation results, and generated PDF on demand.
 
-Projects are ordinary directories with manuscripts, bibliography files, relative asset paths, and portable sidecars for comments and preferences. Writing, review, rendering, and export work offline with locally available tools and template assets. Optional online lookups show retrieved metadata for confirmation.
+Projects are ordinary directories with manuscripts, bibliography files, relative asset paths, and plain inline Markdown HTML comments and portable sidecars for preferences. Writing, review, rendering, and export work offline with locally available tools and template assets. Optional online lookups show retrieved metadata for confirmation.
 
 ## Capabilities and Constraints
 
@@ -58,7 +58,7 @@ Projects are ordinary directories with manuscripts, bibliography files, relative
 - Pin template and renderer versions for repeatable builds. Template updates must not silently alter an existing submission.
 - Exact page counts come from the PDF layout engine. Older counts and estimates must be labeled. PDF preview is available on demand.
 - Writing rules are individually configurable suggestions. The 25-word sentence threshold is a configurable heuristic. No heuristic automatically rewrites prose. Initial analysis languages are Brazilian Portuguese and English with regional variants.
-- Autosave, recovery, external-edit detection, and safe conflict handling protect local work. Comments stay in sidecars; uncertain anchors must be flagged.
+- Autosave, recovery, external-edit detection, and safe conflict handling protect local work. Author comments use plain `<!-- … -->` text in the manuscript, without reply threads or author/timestamp metadata. Writing suggestions are computed at runtime and are never written into Markdown.
 - Prefer declarative template packages. Executable extensions need explicit capabilities and constrained access; sandbox technology is undecided.
 
 ## Brand Commitments
@@ -91,7 +91,7 @@ International templates, executable extensions, portable review bundles, optiona
 
 ## Open Decisions
 
-Native UI framework; canonical Markdown dialect; publishing backend and fallback adapters; comment anchoring; AST transformation boundaries; evidence for venue compatibility; background compilation policy; distribution of fonts and offline dependencies; language-engine interfaces; and extension sandboxing.
+Native UI framework; canonical Markdown dialect; publishing backend and fallback adapters; mapping inline comments to nearby manuscript context; AST transformation boundaries; evidence for venue compatibility; background compilation policy; distribution of fonts and offline dependencies; language-engine interfaces; and extension sandboxing.
 
 Slint, Iced, Quarto, Pandoc, Typst, LaTeX, and WASI are investigation candidates rather than finalized choices. Numeric adoption, performance, and business targets are unset.
 
